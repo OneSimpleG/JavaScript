@@ -23,27 +23,16 @@ console.log('   Uzd. 5  ')
 const sk1 = 10
 const sk2 = 9
 const sk3 = 7
-if (sk1>sk2 && sk>sk3){
-    console.log(`${sk1} yra didesnis uz ${sk2} ir ${sk3}`)
-}
-else if (sk2>sk1 && sk2>sk3){
-    console.log(`${sk2} yra didesnis uz ${sk1} ir ${sk3}`)
-}
-else if (sk3>sk1 && sk3>sk2){
-    console.log(`${sk3} yra didesnis uz ${sk1} ir ${sk2}`)
-}
+if (sk1>sk2 && sk>sk3)console.log(`${sk1} yra didesnis uz ${sk2} ir ${sk3}`)
+else if (sk2>sk1 && sk2>sk3)console.log(`${sk2} yra didesnis uz ${sk1} ir ${sk3}`)
+else if (sk3>sk1 && sk3>sk2)console.log(`${sk3} yra didesnis uz ${sk1} ir ${sk2}`)
 console.log('   Uzd. 6  ')
 const vedes = false
 const atlyginimas = 950
-if (vedes == false && atlyginimas >= 950){
-    console.log('Sveikiname, jus gavote paskola!')
-}
-else if (vedes == true && atlyginimas >= 1500){
-    console.log('Paskola bus suteikta')
-}
-else{
-    console.log('Kai uzdibsi daugiau, ateik, pakalbesim')
-}
+const vardas = 'Petras'
+if (vedes == false && atlyginimas >= 950)console.log('Sveikiname, jus gavote paskola!')
+else if (vedes == true && atlyginimas >= 1500)console.log('Paskola bus suteikta')
+else console.log('Kai uzdibsi daugiau, ateik, pakalbesim')
 console.log('   Uzd. 7  ')
 const diena = '3'
 switch (diena){
