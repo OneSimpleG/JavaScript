@@ -44,3 +44,74 @@ else if (vedes == true && atlyginimas >= 1500){
 else{
     console.log('Kai uzdibsi daugiau, ateik, pakalbesim')
 }
+console.log('   Uzd. 7  ')
+const diena = '3'
+switch (diena){
+    case"1":
+        console.log('Pirmadienis')
+        break
+    case"2":
+        console.log('Antradienis')
+        break
+    case"3":
+        console.log('Treciadienis')
+        break
+    case"4":
+        console.log('Ketvirtadienis')
+        break
+    case"5":
+        console.log('Penktadienis')
+        break
+    case"6":
+        console.log('Sestadienis')
+        break
+    case"7":
+        console.log('Sekmadienis')
+        break
+    default:
+        console.log('Neteisingas nurodytas skaicius')
+        break
+}
+console.log('   Uzd. 8  ')
+const men = '10'
+switch (men){
+    case"1":
+        console.log('Sausis')
+        break
+    case"2":
+        console.log('Vasaris')
+        break
+    case"3":
+        console.log('Kovas')
+        break
+    case"4":
+        console.log('Balandis')
+        break
+    case"5":
+        console.log('Geguze')
+        break
+    case"6":
+        console.log('Birzelis')
+        break
+    case"7":
+        console.log('Liepa')
+        break
+    case"8":
+        console.log('Rugpjutis')
+        break
+    case"9":
+        console.log('Rugsejis')
+        break
+    case"10":
+        console.log('Spalis')
+        break
+    case"11":
+        console.log('Lapkritis')
+        break
+    case"12":
+        console.log('Gruodis')
+        break
+    default:
+        console.log('Neteisingas nurodytas skaicius')
+        break
+}
