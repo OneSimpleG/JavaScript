@@ -35,27 +35,31 @@ function triangle(sk1,sk2,sk3){
 triangle(10,5,bigSmall)
 //------Uzd. 5------
 function figure(){
+    let fPlotas = 0
     let shape = prompt('Iveskite kokia figura norike apskaicuoti (trikampis / kvadratas)')
     if (shape == 'trikampis'){
-        let b = parseInt(prompt('Iveskite trikampio pagrido ilgi'))
-        let h = parseInt(prompt('Iveskite trikampio aukstine'))
-        let tPlotas = (b*h)/2
-        alert(`trikampio plotas yra ${tPlotas}`)
+        function figureTri(){
+            let b = parseInt(prompt('Iveskite trikampio pagrido ilgi'))
+            let h = parseInt(prompt('Iveskite trikampio aukstine'))
+            return (b*h)/2
+        }
+        alert(`figuros plotas yra ${figureTri()}`)
     }
     else if (shape === 'kvadratas'){
-        let a = parseInt(prompt('Iveskite staciakampio pirmos krastines ilgi'))
-        let a2 = parseInt(prompt('Iveskite staciakampio pirmos krastines ilgi'))
-        alert(`staciakampio plotas yra ${a*a2}`)
+        function figureKvad(){
+            let a = parseInt(prompt('Iveskite staciakampio pirmos krastines ilgi'))
+            let a2 = parseInt(prompt('Iveskite staciakampio pirmos krastines ilgi'))
+            return a*a2
+        }
+        alert(`figuros plotas yra ${figureKvad()}`)
     }
     else alert('Netaip Ivesta figura')
+    
 }
 // figure()
 //------Uzd. 6------
 // function isSeven(x) { return x="7" ? false : true : false;}
-function isSeven(x){
-    if (x == '7') console.log(x=='7');
-    else console.log(x=='7');
-}
+function isSeven(x){x==7 ? console.log(x==7) : console.log(x==7);;}
 isSeven(8)
 //------Uzd. 7------
 function isEqual(x,y){
