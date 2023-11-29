@@ -93,8 +93,7 @@
 // let k = 0
 // while (k < 10){
 //     k++
-//     if (k%2==0) continue
-//     else console.log(k);
+//     if (k%2!=0) console.log(k)
 // }
 
 //------Do...While------
@@ -104,7 +103,7 @@
 // let num = 0
 // do {
 //     num = parseInt(prompt('iveskite skaiciu'))
-//     suma += num
+//     if (num > 0) suma += num
 // } while (num>0)
 // console.log(suma);
 //------Uzd. 2------
