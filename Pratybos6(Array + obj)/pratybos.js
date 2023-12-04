@@ -78,12 +78,12 @@
 
 
 //------Uzd. 9------
-const randomArray = []
-for (let i=1;i<=30;i++){
-    let rng = Math.trunc(Math.random() * (25 - 5 + 1) + 5)
-    randomArray.push(rng)
-}
-console.log(randomArray);
+// const randomArray = []
+// for (let i=1;i<=30;i++){
+//     let rng = Math.trunc(Math.random() * (25 - 5 + 1) + 5)
+//     randomArray.push(rng)
+// }
+// console.log(randomArray);
 //------Uzd. 10------
 // A
 // let kiek = 0
@@ -113,3 +113,171 @@ console.log(randomArray);
 //     indexedArray.push(indexedNum)
 // }
 // console.log(indexedArray);
+// E
+// for (let i=1;i<=10;i++){
+//     let rng2 = Math.trunc(Math.random() * (25 - 5 + 1) +5)
+//     randomArray.push(rng2)
+// }
+// console.log(randomArray);
+// F
+// let lygIndex = []
+// let nelygIndex = []
+// for (let i=1;i<randomArray.length;i++){
+//     if (i%2==0) lygIndex.push(randomArray[i])
+//     else nelygIndex.push( randomArray[i])
+// }
+// console.log(lygIndex);
+// console.log(nelygIndex);
+// G
+// for (let i=1;i<randomArray.length;i++){
+//     if (i%2==0 && randomArray[i]>15) randomArray[i]=0
+// }
+// console.log(randomArray);
+// H
+// for (let i of randomArray){
+//     if (i>10) {
+//         console.log(randomArray.indexOf(i));
+//         break
+//     } 
+// }
+
+//------Uzd. 11------
+// let duomenys = {
+//     id: "0001",
+//     type: "donut",
+//     name: "Cake",
+//     ppu: 0.55,
+//     topping: [
+//         {id: "5001", type: "None"},
+//         {id: "5002", type: "Glazed"},
+//         {id: "5005", type: "Sugar"},
+//         {id: "5007", type: "Powdered Suar"},
+//         {id: "5006", type: "Chocolate with Sprinkles"},
+//         {id: "5003", type: "Chocolate"},
+//         {id: "5004", type: "Maple"},
+//     ]
+// }
+// for (let i in duomenys){
+//     console.log(i,duomenys[i]);
+// }
+
+//------Uzd. 12------
+// const family = {
+//     grandparents: {
+//         grandma: "Marge",
+//         gradpa: "Homer",
+//     },
+//     parents: {
+//         mom: "Lisa",
+//         dad: "Millhouse"
+//     },
+//     children: {
+//         daugther: "Anne",
+//         son1: "Peter",
+//         son2: "Bob"
+//     },
+// }
+// for (let i in family){
+//     let txt = Object.values(family[i])
+//     console.log(`${i}: ${txt}`);
+// }
+// const knygos = [
+//     {
+//       isbn: 9786098233346,
+//       price: 7.99,
+//       year: 2006,
+//       title: "Bloga dukte",
+//       pagecount: 250,
+//     },
+//     {
+//       isbn: 9786098233391,
+//       price: 7.99,
+//       year: 2015,
+//       title: "Mergina kuria jis pazinojo",
+//       pagecount: 315,
+//     },
+//     {
+//       isbn: 9786099609324,
+//       price: 7.99,
+//       year: 2019,
+//       title: "Tapk ragana",
+//       pagecount: 150,
+//     },
+//     {
+//       isbn: 9786094792250,
+//       price: 6.99,
+//       year: 2007,
+//       title: "Sfera",
+//       pagecount: 450,
+//     },
+//     {
+//       isbn: 9786094792335,
+//       price: 9.99,
+//       year: 2019,
+//       title: "Mes susitinkame cia",
+//       pagecount: 500,
+//     },
+//     {
+//       isbn: 9786094273780,
+//       price: 7.99,
+//       year: 2019,
+//       title: "Sunaikinimas",
+//       pagecount: 509,
+//     },
+//     {
+//       isbn: 9786098233483,
+//       price: 12.99,
+//       year: 2018,
+//       title: "Artemide",
+//       pagecount: 199,
+//     },
+//     {
+//       isbn: 9786094273872,
+//       price: 4.99,
+//       year: 2015,
+//       title: "Fondas ir imperija",
+//       pagecount: 185,
+//     },
+//     {
+//       isbn: 9786094273902,
+//       price: 7.99,
+//       year: 2019,
+//       title: "Amzinybes fjordo pranasai",
+//       pagecount: 333,
+//     },
+//     {
+//       isbn: 9786094442742,
+//       price: 5.99,
+//       year: 2004,
+//       title: "Bejegiai",
+//       pagecount: 777,
+//     },
+//     {
+//       isbn: 9786094442940,
+//       price: 14.99,
+//       year: 2019,
+//       title: "Klajunai",
+//       pagecount: 172,
+//     },
+//     {
+//       isbn: 9786090404386,
+//       price: 7.99,
+//       year: 2015,
+//       title: "Mergina, kuri pakliuvo i voratinkli",
+//       pagecount: 356,
+//     },
+//   ];
+// let knyguArray = []
+// for (let i in Object.entries(knygos)){
+//     for(let j in Object.keys(knygos[i])){
+//         let key = Object.keys(knygos[i])
+//         let value = Object.values(knygos[i])
+//         console.log(`${key[j]} --> ${value[j]}`);
+//         if (key[j]=='year' && value[j]>2015){
+//             knyguArray.push(value)
+//         }
+//     }
+// }
+// console.log(knyguArray);
+
+//------Uzd. 13------
