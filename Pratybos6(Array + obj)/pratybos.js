@@ -158,6 +158,13 @@
 //     ]
 // }
 // for (let i in duomenys){
+//     if (i=='topping'){
+//         console.log('topping:');
+//         for (let j in Object.entries(duomenys.topping)){
+//             console.log(duomenys.topping[j]);
+//         }
+//         break
+//     }
 //     console.log(i,duomenys[i]);
 // }
 
@@ -267,17 +274,35 @@
 //       pagecount: 356,
 //     },
 //   ];
-// let knyguArray = []
-// for (let i in Object.entries(knygos)){
-//     for(let j in Object.keys(knygos[i])){
-//         let key = Object.keys(knygos[i])
-//         let value = Object.values(knygos[i])
-//         console.log(`${key[j]} --> ${value[j]}`);
-//         if (key[j]=='year' && value[j]>2015){
-//             knyguArray.push(value)
-//         }
+// let knyguMas = []
+// for (let i in knygos){
+//     for (let a in knygos[i]){
+//         console.log(`${a} --> ${knygos[i][a]}`);
 //     }
+//     console.log('');
+//     if (knygos[i].year >2015) knyguMas.push(knygos[i])
 // }
-// console.log(knyguArray);
+// console.log(...knyguMas);
 
 //------Uzd. 13------
+const seimosSumos = [36, 78, 200]
+const arbatpinigiai = []
+const galSuma = []
+function arbatCal(sumos){
+    for (let i of sumos){
+        if (i<50){
+            galSuma.push(((0.2*i)+i).toFixed(2))
+            arbatpinigiai.push((0.2*i).toFixed(2))
+        } 
+        else if (i>50 && i<200){
+            galSuma.push(((0.15*i)+i).toFixed(2))
+            arbatpinigiai.push((0.15*i).toFixed(2))
+        } 
+        else if (i>=200){
+            galSuma.push(((0.1*i)+i).toFixed(2))
+            arbatpinigiai.push((0.1*i).toFixed(2))
+        }
+    }
+    return `arbatpinigiai: ${arbatpinigiai}. Galutine suma: ${galSuma}`
+}
+console.log(arbatCal(seimosSumos));
