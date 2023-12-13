@@ -1,57 +1,43 @@
 "use strict";
-import result from "./data.js"
-localStorage.clear()
-const favorites = JSON.parse(localStorage.getItem("favorites"))
-const data = favorites ===null ? [] : favorites
-data.push(...result)
-localStorage.setItem("favorites",JSON.stringify(data))
-function findFilm(ids){
-  for (let i in result){
-    if (result[i].id == ids){
-      let movieID = data[i].id
-      let movieTitle = data[i].title
-      localStorage.setItem("movieID",movieID)
-      localStorage.setItem("movieTitle",movieTitle)
-    }
-  }
-}
-console.log(data);
-// findFilm(436270)
-function showFilms(){
-  for (let i in data){
-    for(let j in data[i])
-      console.log(`${j}: ${data[i][j]}`);
-      console.log(' ');
-  }
-}
-showFilms()
-// function removeFilm(ids){
-//     for (let i in data){
-//         if (data[i].id === ids)
-//             data.splice(i,1)
-//         }
-//         data.push(movies)
-//     // localStorage.setItem("favotites",JSON.stringify(movies))
+// import result from "./data.js"
+// localStorage.clear()
+// const favorites = JSON.parse(localStorage.getItem("favorites"))
+// const data = favorites ===null ? [] : favorites
+// data.push(...result)
+// localStorage.setItem("favorites",JSON.stringify(data))
+// function findFilm(ids){
+//   for (let i in result){
+//     if (result[i].id == ids){
+//       let movieID = data[i].id
+//       let movieTitle = data[i].title
+//       localStorage.setItem("movieID",movieID)
+//       localStorage.setItem("movieTitle",movieTitle)
+//     }
+//   }
 // }
-// removeFilm(436270)
-const removeMovie=(id)=>{
-    const fromLS = JSON.parse(localStorage.getItem("favorites"))
-    const movieIndex = fromLS.findIndex((movie)=> movie.id == id)
-    console.log(movieIndex);
-    if(movieIndex>-1){
-        alert(`Istrintas filmas ${fromLS[movieIndex].title}`)
-        fromLS.splice(movieIndex,1)
-        localStorage.setItem("favorites",JSON.stringify(fromLS))
-    }else{
-        alert("movie not found")
-    }
-}
-removeMovie(766507)
-
-
-
-
-
+// console.log(data);
+// findFilm(436270)
+// function showFilms(){
+//   for (let i in data){
+//     for(let j in data[i])
+//       console.log(`${j}: ${data[i][j]}`);
+//       console.log(' ');
+//   }
+// }
+// showFilms()
+// const removeMovie=(id)=>{
+//     const fromLS = JSON.parse(localStorage.getItem("favorites"))
+//     const movieIndex = fromLS.findIndex((movie)=> movie.id == id)
+//     console.log(movieIndex);
+//     if(movieIndex>-1){
+//         alert(`Istrintas filmas ${fromLS[movieIndex].title}`)
+//         fromLS.splice(movieIndex,1)
+//         localStorage.setItem("favorites",JSON.stringify(fromLS))
+//     }else{
+//         alert("movie not found")
+//     }
+// }
+// removeMovie(766507)
 // const dataFromLS = JSON.parse(localStorage.getItem("persons"))
 // console.log(dataFromLS);
 // const data= dataFromLS===null? [] : dataFromLS;
@@ -159,3 +145,32 @@ removeMovie(766507)
 
 // let dogFromLS = sessionStorage.getItem("dog")
 // console.log(dogFromLS);
+
+import data from './data.json' assert { type: 'json' };
+console.log(data);
+
+const patikra = localStorage.getItem("countries")
+const sal = patikra === null ? [] : JSON.parse(patikra)
+
+data.forEach((el, index) => {
+  if(!el.hasOwnProperty('capital')){
+    const country = {
+      id: index+1,
+      name: el.name.common,
+      capital: 'Data not found'
+    };
+    console.log(country);
+    sal.push(country)
+  }
+  else{
+    const country = {
+      id: index+1,
+      name: el.name.common,
+      capital: el.capital[0]
+    };
+    console.log(country);
+    sal.push(country)
+  }
+});
+console.log(sal);
+localStorage.setItem("countries", JSON.stringify(sal))
