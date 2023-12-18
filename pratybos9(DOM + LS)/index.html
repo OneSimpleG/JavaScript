@@ -7,8 +7,22 @@
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/heart.css' rel='stylesheet'>
 </head>
 <body>
-<div id="gallery"></div>
-
+<div id="shop"></div>
+    <form id="form">
+        <div id="formInput">
+            <label for="idField">Product ID:</label>
+            <input type="number" placeholder="ID" id="idField">
+            <label for="nameField">Product Name:</label>
+            <input type="text" placeholder="Name" id="nameField">
+            <label for="quantField">Product Quantity:</label>
+            <input type="number" placeholder="Quantity" id="quantField">
+        </div>
+        <div id="formButton">
+            <button type="submit" id="submitButton">Submit</button>
+            <button type="submit" id="editButton">Edit Item</button>
+            <button type="submit" id="removeButton">Remove From LS</button>
+        </div>
+    </form>
     <script src="pratybos.js" type="module"></script>
 </body>
 </html>
