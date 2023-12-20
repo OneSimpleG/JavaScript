@@ -117,6 +117,78 @@ editButton.addEventListener("click",(event)=>{
         }
     }
 })
+// if(JSON.parse(localStorage.getItem("cartList"))!=null){
+//     const dataFromLS = JSON.parse(localStorage.getItem("cartList"))
+//     let listItems = 0
+//     dataFromLS.forEach((el)=>{
+//         listItems++
+//     })
+//     const table = document.createElement("table")
+//     const tableBody = document.createElement("tbody")
+//     const nameRow = document.createElement("tr")
+//     const pin = document.createElement("td")
+//     pin.innerText="ID"
+//     const pnn = document.createElement("td")
+//     pnn.innerText="Name"
+//     const pqn = document.createElement("td")
+//     pqn.innerText="Quantity"
+//     nameRow.append(pin,pnn,pqn)
+//     tableBody.appendChild(nameRow)
+//     table.appendChild(tableBody)
+//     document.body.appendChild(table)
+//     for (let i = 0; i<listItems; i++){
+//         const row = document.createElement("tr")
+//         const pIdCell = document.createElement("td")
+//         pIdCell.innerText=dataFromLS[i].id
+//         const pNameCell = document.createElement("td")
+//         pNameCell.innerText=dataFromLS[i].name
+//         const pCountCell = document.createElement("td")
+//         pCountCell.innerText=dataFromLS[i].quantity
+//         row.append(pIdCell,pNameCell,pCountCell)
+//         tableBody.appendChild(row)
+//         table.appendChild(tableBody)
+//     }
+//     table.setAttribute("border", "1")
+//     shopButton.forEach((el)=>{
+//         addEventListener("click",(event)=>{
+//             event.preventDefault()
+//             dataFromLS.forEach((el)=>{
+//                 listItems++
+//             })
+//             for (let i = 0; i<listItems; i++){
+//                 const tableCheck = document.querySelector("table")
+//                 if(tableCheck){
+//                     tableCheck.remove()
+//                 }
+//                 if(dataFromLS!=null){
+//                     const table = document.createElement("table")
+//                     const tableBody = document.createElement("tbody")
+//                     const nameRow = document.createElement("tr")
+//                     const pin = document.createElement("td")
+//                     pin.innerText="ID"
+//                     const pnn = document.createElement("td")
+//                     pnn.innerText="Name"
+//                     const pqn = document.createElement("td")
+//                     pqn.innerText="Quantity"
+//                     nameRow.append(pin,pnn,pqn)
+//                     tableBody.appendChild(nameRow)
+//                     table.appendChild(tableBody)
+//                     document.body.appendChild(table)
+//                     const row = document.createElement("tr")
+//                     const pIdCell = document.createElement("td")
+//                     pIdCell.innerText=dataFromLS[i].id
+//                     const pNameCell = document.createElement("td")
+//                     pNameCell.innerText=dataFromLS[i].name
+//                     const pCountCell = document.createElement("td")
+//                     pCountCell.innerText=dataFromLS[i].quantity
+//                     row.append(pIdCell,pNameCell,pCountCell)
+//                     tableBody.appendChild(row)
+//                     table.appendChild(tableBody)
+//                 }
+//             }
+//         })
+//     })
+// }
 // shopButton.forEach((el)=>{
 //     el.addEventListener("click",(event)=>{
 //         event.preventDefault()
