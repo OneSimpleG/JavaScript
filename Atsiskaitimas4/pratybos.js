@@ -65,84 +65,168 @@
 //     listItems.value=""
 // })
 // Uzduotis 3
-const taskContainer = document.createElement("div")
-// taskContainer.setAttribute("id","taskContainer")
-const submitButton = document.getElementById("submit")
-submitButton.addEventListener("click",(event)=>{
-    const todo = JSON.parse(localStorage.getItem("todoList"))
-    const data = todo === null ? [] : todo
-    event.preventDefault()
-    const taskName = document.getElementById("taskInput").value
-    const taskPriority = document.getElementById("priority").value
-    // console.log(taskName,taskPriority);
-    const task ={
-        name: taskName,
-        priority: taskPriority
-    }
-    data.push(task)
-    localStorage.setItem("todoList",JSON.stringify(data))
-    console.log(document.getElementById("taskTable"));
-    if(document.getElementById("taskTable")!=null){
-        console.log("test");
-        const tableCheck = document.getElementById("taskTable")
-        tableCheck.remove()
-    }
-    const taskTable = document.createElement("table")
-    taskTable.setAttribute("id","taskTable")
-    document.body.append(taskTable)
-    const cellNames = document.createElement("tr")
-    const taskTableName = document.createElement("th")
-    taskTableName.innerText="Task:"
-    const taskTablePriority = document.createElement("th")
-    taskTablePriority.innerText="Priority:"
-    const taskTableOption = document.createElement("th")
-    taskTableOption.innerText="Option:"
-    cellNames.append(taskTableName,taskTablePriority,taskTableOption)
-    taskTable.appendChild(cellNames)
-    todo.forEach((el)=>{
-        const taskRow = document.createElement("tr")
-        const taskTableTask = document.createElement("td")
-        const taskTablePriority = document.createElement("td")
-        taskTableTask.innerText=el.name
-        taskTablePriority.innerText=el.priority
-        taskRow.append(taskTableTask,taskTablePriority)
-        taskTable.append(taskRow)
-    })
-    taskTable.setAttribute("border", "1")
-})
-if(JSON.parse(localStorage.getItem("todoList"))!=null){
-    const taskTable = document.createElement("table")
-    taskTable.setAttribute("id","taskTable")
-    document.body.append(taskTable)
-    const cellNames = document.createElement("tr")
-    const taskTableName = document.createElement("th")
-    taskTableName.innerText="Task:"
-    const taskTablePriority = document.createElement("th")
-    taskTablePriority.innerText="Priority:"
-    const taskTableOption = document.createElement("th")
-    taskTableOption.innerText="Option:"
-    cellNames.append(taskTableName,taskTablePriority,taskTableOption)
-    const todo = JSON.parse(localStorage.getItem("todoList"))
-    taskTable.appendChild(cellNames)
-    todo.forEach((el)=>{
-        const taskRow = document.createElement("tr")
-        const taskTableTask = document.createElement("td")
-        const taskTablePriority = document.createElement("td")
-        const taskComplete = document.createElement("button")
-        const taskRemove = document.createElement("button")
-        taskTableTask.innerText=el.name
-        taskTablePriority.innerText=el.priority
-        taskComplete.innerText="Check"
-        taskRemove.innerText="Remove"
-        taskComplete.addEventListener("click",(event)=>{
-            console.log(el);
-            taskTableTask.style.backgroundColor="lightGreen"
-            taskTablePriority.style.backgroundColor="lightGreen"
-        })
-        // taskComplete.style.width="50%"
-        // taskRemove.style.width="50%"
-        taskRow.append(taskTableTask,taskTablePriority,taskComplete,taskRemove)
-        taskTable.append(taskRow)
-    })
-    taskTable.setAttribute("border", "1")
-}
+// const taskContainer = document.createElement("div")
+// const submitButton = document.getElementById("submit")
+// submitButton.addEventListener("click",(event)=>{
+//     const todo = JSON.parse(localStorage.getItem("todoList"))
+//     const data = todo === null ? [] : todo
+//     event.preventDefault()
+//     const taskName = document.getElementById("taskInput").value
+//     const taskPriority = document.getElementById("priority").value
+//     const task ={
+//         name: taskName,
+//         priority: taskPriority
+//     }
+//     data.push(task)
+//     localStorage.setItem("todoList",JSON.stringify(data))
+//     if(document.getElementById("taskTable")!=null){
+//         console.log("test");
+//         const tableCheck = document.getElementById("taskTable")
+//         tableCheck.remove()
+//     }
+//     const taskTable = document.createElement("table")
+//     taskTable.setAttribute("id","taskTable")
+//     document.body.append(taskTable)
+//     const cellNames = document.createElement("tr")
+//     const taskTableName = document.createElement("th")
+//     taskTableName.innerText="Task:"
+//     const taskTablePriority = document.createElement("th")
+//     taskTablePriority.innerText="Priority:"
+//     const taskTableOption = document.createElement("th")
+//     taskTableOption.innerText="Option:"
+//     cellNames.append(taskTableName,taskTablePriority,taskTableOption)
+//     taskTable.appendChild(cellNames)
+//     data.forEach((el,index)=>{
+//         console.log(el);
+//         const taskRow = document.createElement("tr")
+//         const taskTableTask = document.createElement("td")
+//         const taskTablePriority = document.createElement("td")
+//         const taskComplete = document.createElement("input")
+//         const taskRemove = document.createElement("button")
+//         taskTableTask.innerText=el.name
+//         taskTablePriority.innerText=el.priority
+//         taskComplete.setAttribute("type","checkbox")
+//         taskRemove.innerText="X"
+//         taskComplete.addEventListener("click",(event)=>{
+//             if(taskComplete.checked){
+//                 taskTableTask.style.backgroundColor="lightGreen"
+//                 taskTablePriority.style.backgroundColor="lightGreen"
+//             }else{
+//                 taskTableTask.style.backgroundColor="white"
+//                 taskTablePriority.style.backgroundColor="white"
+//             }
+//         })
+//         console.log(todo);
+//         taskRemove.addEventListener("click",(event)=>{
+//             data.splice(index,1)
+//             localStorage.setItem("todoList",JSON.stringify(data))
+//             if(document.getElementById("taskTable")!=null){
+//                 console.log("test");
+//                 const tableCheck = document.getElementById("taskTable")
+//                 tableCheck.remove()
+//             }
+//             const taskTable = document.createElement("table")
+//             taskTable.setAttribute("id","taskTable")
+//             document.body.append(taskTable)
+//             const cellNames = document.createElement("tr")
+//             const taskTableName = document.createElement("th")
+//             taskTableName.innerText="Task:"
+//             const taskTablePriority = document.createElement("th")
+//             taskTablePriority.innerText="Priority:"
+//             const taskTableOption = document.createElement("th")
+//             taskTableOption.innerText="Option:"
+//             cellNames.append(taskTableName,taskTablePriority,taskTableOption)
+//             taskTable.appendChild(cellNames)
+//             data.forEach((el)=>{
+//                 console.log(el);
+//                 const taskRow = document.createElement("tr")
+//                 const taskTableTask = document.createElement("td")
+//                 const taskTablePriority = document.createElement("td")
+//                 const taskComplete = document.createElement("input")
+//                 const taskRemove = document.createElement("button")
+//                 taskTableTask.innerText=el.name
+//                 taskTablePriority.innerText=el.priority
+//                 taskComplete.setAttribute("type","checkbox")
+//                 taskRemove.innerText="X"
+//             })
+//         })
+//         taskRow.append(taskTableTask,taskTablePriority,taskComplete,taskRemove)
+//         taskTable.append(taskRow)
+//         taskTable.setAttribute("border", "1")
+//     })
+//     document.getElementById("taskInput").value = ""
+// })
+// console.log(JSON.parse(localStorage.getItem("todoList")));
+// if(JSON.parse(localStorage.getItem("todoList"))!=null){
+//     const todo = JSON.parse(localStorage.getItem("todoList"))
+//     const data = todo === null ? [] : todo
+//     console.log(todo);
+//     const taskTable = document.createElement("table")
+//     taskTable.setAttribute("id","taskTable")
+//     document.body.append(taskTable)
+//     const cellNames = document.createElement("tr")
+//     const taskTableName = document.createElement("th")
+//     taskTableName.innerText="Task:"
+//     const taskTablePriority = document.createElement("th")
+//     taskTablePriority.innerText="Priority:"
+//     const taskTableOption = document.createElement("th")
+//     taskTableOption.innerText="Option:"
+//     cellNames.append(taskTableName,taskTablePriority,taskTableOption)
+//     taskTable.appendChild(cellNames)
+//     data.forEach((el,index)=>{
+//         console.log(el);
+//         const taskRow = document.createElement("tr")
+//         const taskTableTask = document.createElement("td")
+//         const taskTablePriority = document.createElement("td")
+//         const taskComplete = document.createElement("input")
+//         const taskRemove = document.createElement("button")
+//         taskTableTask.innerText=el.name
+//         taskTablePriority.innerText=el.priority
+//         taskComplete.setAttribute("type","checkbox")
+//         taskRemove.innerText="X"
+//         taskComplete.addEventListener("click",(event)=>{
+//             if(taskComplete.checked){
+//                 taskTableTask.style.backgroundColor="lightGreen"
+//                 taskTablePriority.style.backgroundColor="lightGreen"
+//             }else{
+//                 taskTableTask.style.backgroundColor="white"
+//                 taskTablePriority.style.backgroundColor="white"
+//             }
+//         })
+//         console.log(todo);
+//         taskRemove.addEventListener("click",(event)=>{
+//             data.splice(index,1)
+//             localStorage.setItem("todoList",JSON.stringify(data))
+//             const taskTable = document.createElement("table")
+//             taskTable.setAttribute("id","taskTable")
+//             document.body.append(taskTable)
+//             const cellNames = document.createElement("tr")
+//             const taskTableName = document.createElement("th")
+//             taskTableName.innerText="Task:"
+//             const taskTablePriority = document.createElement("th")
+//             taskTablePriority.innerText="Priority:"
+//             const taskTableOption = document.createElement("th")
+//             taskTableOption.innerText="Option:"
+//             cellNames.append(taskTableName,taskTablePriority,taskTableOption)
+//             taskTable.appendChild(cellNames)
+//             data.forEach((el)=>{
+//                 console.log(el);
+//                 const taskRow = document.createElement("tr")
+//                 const taskTableTask = document.createElement("td")
+//                 const taskTablePriority = document.createElement("td")
+//                 const taskComplete = document.createElement("input")
+//                 const taskRemove = document.createElement("button")
+//                 taskTableTask.innerText=el.name
+//                 taskTablePriority.innerText=el.priority
+//                 taskComplete.setAttribute("type","checkbox")
+//                 taskRemove.innerText="X"
+//             })
+//             console.log(todo.lenght);
+//         })
+//         taskRow.append(taskTableTask,taskTablePriority,taskComplete,taskRemove)
+//         taskTable.append(taskRow)
+//     })
+//     taskTable.setAttribute("border", "1")
+// }
+
+// Komentaras: lentele ir remove mygtukai nelabai veikia 
