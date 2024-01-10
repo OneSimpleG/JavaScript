@@ -1,4 +1,5 @@
 "use strict";
+// Coffe API
 const nextButton = document.createElement("button")
 nextButton.innerText="Show next photo"
 const image = document.createElement("img")
