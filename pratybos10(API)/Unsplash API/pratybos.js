@@ -23,7 +23,9 @@ const getPhotos = async (search) =>{
             const image = document.createElement("img")
             image.className="image"
             image.style.width="18vw"
+            image.style.minWidth="100px"
             image.style.height="22vw"
+            image.style.minHeight="200px"
             image.style.objectFit="cover"
             image.style.padding="5px"
             image.src=el.urls.regular
@@ -46,7 +48,9 @@ const getPhotos = async (search) =>{
                 const image = document.createElement("img")
                 image.className="image"
                 image.style.width="18vw"
+                image.style.minWidth="100px"
                 image.style.height="22vw"
+                image.style.minHeight="200px"
                 image.style.objectFit="cover"
                 image.style.padding="5px"
                 image.src=el.urls.regular
