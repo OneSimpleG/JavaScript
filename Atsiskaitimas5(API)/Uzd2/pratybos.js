@@ -7,16 +7,16 @@ searchButton.innerText="Find movie"
 document.body.append(inputField,searchButton)
 const getMovie = async()=>{
     const result = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${inputField.value.trim()}`)
-    if(result.status === 404){
+    const data = await result.json()
+    const allMovieContainers = document.querySelectorAll(".movieContainer")
+    allMovieContainers.forEach(movie => movie.remove())
+    if(data.Response == "False"){
         const errorMessage = document.createElement("div")
         errorMessage.className="movieContainer"
         errorMessage.innerText="filmas nerastas"
         document.body.append(errorMessage)
     }else{
-        const data = await result.json()
         inputField.value=""
-        const allMovieContainers = document.querySelectorAll(".movieContainer")
-        allMovieContainers.forEach(movie => movie.remove())
         const movieContainer = document.createElement("div")
         movieContainer.className="movieContainer"
         movieContainer.style.display="flex"

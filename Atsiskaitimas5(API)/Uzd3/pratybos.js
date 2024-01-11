@@ -30,8 +30,8 @@ const getRandomPhotos = async(search)=>{
                 photo.src=el.images.web.url
                 photo.style.margin="0 auto 5px auto"
                 photo.style.display="block"
-                photo.style.width="19.5vw"
-                photo.style.height="18vw"
+                photo.style.width="18vw"
+                photo.style.height="19.5vw"
                 photo.style.objectFit="contain"
                 const author = document.createElement("div")
                 if(el.creators[0] != null){
