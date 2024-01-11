@@ -6,9 +6,9 @@ const searchButton =document.createElement("button")
 searchButton.innerText="Find movie"
 document.body.append(inputField,searchButton)
 const getMovie = async()=>{
-    const result = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${inputField.value}`)
+    const result = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${inputField.value.trim()}`)
     if(result.status === 404){
-        const errorMessage = document.createElement("p")
+        const errorMessage = document.createElement("div")
         errorMessage.className="movieContainer"
         errorMessage.innerText="filmas nerastas"
         document.body.append(errorMessage)
