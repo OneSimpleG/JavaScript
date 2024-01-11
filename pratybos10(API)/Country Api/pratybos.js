@@ -9,6 +9,8 @@ document.body.append(textField,searchButton)
 
 const getData = async(name) =>{
     const result = await fetch(`https://restcountries.com/v3.1/name/${name}`)
+    const allCards = document.querySelectorAll(".card")
+    allCards.forEach(card=> card.remove())
     if(result.status === 404){
         const countryName = document.createElement("div")
         countryName.className="card"
@@ -16,8 +18,6 @@ const getData = async(name) =>{
     }else{
         const data = await result.json()
         console.log(data);
-        const allCards = document.querySelectorAll(".card")
-        allCards.forEach(card=> card.remove())
         data.map((country,index)=>{
             const dataContainer = document.createElement("div")
             const imageContainer = document.createElement("img")
