@@ -10,6 +10,8 @@ document.body.append(textField,searchButton)
 const getData = async(name) =>{
     const result = await fetch(`https://restcountries.com/v3.1/name/${name}`)
     if(result.status === 404){
+        const countryName = document.createElement("div")
+        countryName.className="card"
         countryName.innerText="Country not Found"
     }else{
         const data = await result.json()
