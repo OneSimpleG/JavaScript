@@ -81,29 +81,51 @@ animalButtonCat.addEventListener("click",(event)=>{
     form.style.border="2px solid black"
     form.style.backgroundColor="cadetBlue"
     form.style.borderRadius="5px"
-    form.innerHTML=`<label>Name:</label><input class="name"><label>Age:</label><input class="age"><label>Legs:</label><input class="legs"><label>Fur:</label><input class="fur"><label>Wisker:</label><input class="wisker">`
+    const formLabels = ["Name","Age","Legs","Fur","Wisker"]
+    for(let i of formLabels){
+        const label = document.createElement("label")
+        label.innerText=`${i}:`
+        const input = document.createElement("input")
+        input.className=i.toLowerCase()
+        input.className+=" formInput"
+        form.append(label,input)
+    }
     const submitButton = document.createElement("button")
     submitButton.addEventListener("click",(event)=>{
         event.preventDefault()
-        const cat = {
-            name: document.querySelector(".name").value,
-            age: document.querySelector(".age").value,
-            legs: document.querySelector(".legs").value,
-            fur: document.querySelector(".fur").value,
-            wisker: document.querySelector(".wisker").value
+        let fullFields = 0
+        const allInputs = document.querySelectorAll(".formInput")
+        allInputs.forEach(el=>{
+            if(el.value.trim()!=''){
+                fullFields++
+            }
+        })
+        if(fullFields>=5){
+            const cat = {
+                name: document.querySelector(".name").value,
+                age: document.querySelector(".age").value,
+                legs: document.querySelector(".legs").value,
+                fur: document.querySelector(".fur").value,
+                wisker: document.querySelector(".wisker").value
+            }
+            allInputs.forEach(el=>{
+                el.value=''
+            })
+            const animalInfo = document.createElement("div")
+            animalInfo.style.width="120px"
+            animalInfo.style.border="2px solid black"
+            animalInfo.style.borderRadius="5px"
+            animalInfo.style.backgroundColor="cadetBlue"
+            animalInfo.style.margin="3px"
+            for(let i in cat){
+                const infoLine = document.createElement("div")
+                infoLine.innerText=`${i}: ${cat[i]}`
+                animalInfo.append(infoLine)
+            }
+            animalBox.append(animalInfo)
+        }else{
+            alert("Truksta duomenu")
         }
-        const animalInfo = document.createElement("div")
-        animalInfo.style.width="120px"
-        animalInfo.style.border="2px solid black"
-        animalInfo.style.borderRadius="5px"
-        animalInfo.style.backgroundColor="cadetBlue"
-        animalInfo.style.margin="3px"
-        for(let i in cat){
-            const infoLine = document.createElement("div")
-            infoLine.innerText=`${i}: ${cat[i]}`
-            animalInfo.append(infoLine)
-        }
-        animalBox.append(animalInfo)
     })
     submitButton.innerText="Submit"
     submitButton.style.marginTop="18px"
@@ -129,29 +151,47 @@ animalButtonDog.addEventListener("click",(event)=>{
     form.style.border="2px solid black"
     form.style.backgroundColor="cadetBlue"
     form.style.borderRadius="5px"
-    form.innerHTML=`<label>Name:</label><input class="name"><label>Age:</label><input class="age"><label>Legs:</label><input class="legs"><label>Fur:</label><input class="fur"><label>Muzzle:</label><input class="muzzle">`
+    const formLabels = ["Name","Age","Legs","Fur","Muzzle"]
+    for(let i of formLabels){
+        const label = document.createElement("label")
+        label.innerText=`${i}:`
+        const input = document.createElement("input")
+        input.className=i.toLowerCase()
+        form.append(label,input)
+    }
     const submitButton = document.createElement("button")
     submitButton.addEventListener("click",(event)=>{
         event.preventDefault()
-        const dog = {
-            name: document.querySelector(".name").value,
-            age: document.querySelector(".age").value,
-            legs: document.querySelector(".legs").value,
-            fur: document.querySelector(".fur").value,
-            muzzle: document.querySelector(".muzzle").value
+        let fullFields = 0
+        const allInputs = document.querySelectorAll(".formInput")
+        allInputs.forEach(el=>{
+            if(el.value.trim()!=''){
+                fullFields++
+            }
+        })
+        if(fullFields>=5){
+            const dog = {
+                name: document.querySelector(".name").value,
+                age: document.querySelector(".age").value,
+                legs: document.querySelector(".legs").value,
+                fur: document.querySelector(".fur").value,
+                muzzle: document.querySelector(".muzzle").value
+            }
+            const animalInfo = document.createElement("div")
+            animalInfo.style.width="120px"
+            animalInfo.style.border="2px solid black"
+            animalInfo.style.borderRadius="5px"
+            animalInfo.style.backgroundColor="cadetBlue"
+            animalInfo.style.margin="3px"
+            for(let i in dog){
+                const infoLine = document.createElement("div")
+                infoLine.innerText=`${i}: ${dog[i]}`
+                animalInfo.append(infoLine)
+            }
+            animalBox.append(animalInfo)
+        }else{
+            alert("Truksta duomenu")
         }
-        const animalInfo = document.createElement("div")
-        animalInfo.style.width="120px"
-        animalInfo.style.border="2px solid black"
-        animalInfo.style.borderRadius="5px"
-        animalInfo.style.backgroundColor="cadetBlue"
-        animalInfo.style.margin="3px"
-        for(let i in dog){
-            const infoLine = document.createElement("div")
-            infoLine.innerText=`${i}: ${dog[i]}`
-            animalInfo.append(infoLine)
-        }
-        animalBox.append(animalInfo)
     })
     submitButton.innerText="Submit"
     submitButton.style.marginTop="18px"
@@ -177,29 +217,47 @@ animalButtonBird.addEventListener("click",(event)=>{
     form.style.border="2px solid black"
     form.style.backgroundColor="cadetBlue"
     form.style.borderRadius="5px"
-    form.innerHTML=`<label>Name:</label><input class="name"><label>Age:</label><input class="age"><label>Legs:</label><input class="legs"><label>Wings:</label><input class="wings"><label>Beak:</label><input class="beak">`
+    const formLabels = ["Name","Age","Legs","Wings","Beak"]
+    for(let i of formLabels){
+        const label = document.createElement("label")
+        label.innerText=`${i}:`
+        const input = document.createElement("input")
+        input.className=i.toLowerCase()
+        form.append(label,input)
+    }
     const submitButton = document.createElement("button")
     submitButton.addEventListener("click",(event)=>{
         event.preventDefault()
-        const bird = {
-            name: document.querySelector(".name").value,
-            age: document.querySelector(".age").value,
-            legs: document.querySelector(".legs").value,
-            wings: document.querySelector(".wings").value,
-            beak: document.querySelector(".beak").value
+        let fullFields = 0
+        const allInputs = document.querySelectorAll(".formInput")
+        allInputs.forEach(el=>{
+            if(el.value.trim()!=''){
+                fullFields++
+            }
+        })
+        if(fullFields>=5){
+            const bird = {
+                name: document.querySelector(".name").value,
+                age: document.querySelector(".age").value,
+                legs: document.querySelector(".legs").value,
+                wings: document.querySelector(".wings").value,
+                beak: document.querySelector(".beak").value
+            }
+            const animalInfo = document.createElement("div")
+            animalInfo.style.width="120px"
+            animalInfo.style.border="2px solid black"
+            animalInfo.style.borderRadius="5px"
+            animalInfo.style.backgroundColor="cadetBlue"
+            animalInfo.style.margin="3px"
+            for(let i in bird){
+                const infoLine = document.createElement("div")
+                infoLine.innerText=`${i}: ${bird[i]}`
+                animalInfo.append(infoLine)
+            }
+            animalBox.append(animalInfo)
+        }else{
+            alert("Truksta duomenu")
         }
-        const animalInfo = document.createElement("div")
-        animalInfo.style.width="120px"
-        animalInfo.style.border="2px solid black"
-        animalInfo.style.borderRadius="5px"
-        animalInfo.style.backgroundColor="cadetBlue"
-        animalInfo.style.margin="3px"
-        for(let i in bird){
-            const infoLine = document.createElement("div")
-            infoLine.innerText=`${i}: ${bird[i]}`
-            animalInfo.append(infoLine)
-        }
-        animalBox.append(animalInfo)
     })
     submitButton.innerText="Submit"
     submitButton.style.marginTop="18px"
