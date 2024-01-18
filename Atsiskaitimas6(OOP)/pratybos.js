@@ -101,13 +101,14 @@ animalButtonCat.addEventListener("click",(event)=>{
             }
         })
         if(fullFields>=5){
-            const cat = {
-                name: document.querySelector(".name").value,
-                age: document.querySelector(".age").value,
-                legs: document.querySelector(".legs").value,
-                fur: document.querySelector(".fur").value,
-                wisker: document.querySelector(".wisker").value
-            }
+            // const cat = {
+            //     name: document.querySelector(".name").value,
+            //     age: document.querySelector(".age").value,
+            //     legs: document.querySelector(".legs").value,
+            //     fur: document.querySelector(".fur").value,
+            //     wisker: document.querySelector(".wisker").value
+            // }
+            const cat = new Cats(document.querySelector(".name").value,document.querySelector(".age").value,document.querySelector(".legs").value,document.querySelector(".fur").value,document.querySelector(".wisker").value)
             allInputs.forEach(el=>{
                 el.value=''
             })
@@ -157,6 +158,7 @@ animalButtonDog.addEventListener("click",(event)=>{
         label.innerText=`${i}:`
         const input = document.createElement("input")
         input.className=i.toLowerCase()
+        input.className+=" formInput"
         form.append(label,input)
     }
     const submitButton = document.createElement("button")
@@ -170,13 +172,17 @@ animalButtonDog.addEventListener("click",(event)=>{
             }
         })
         if(fullFields>=5){
-            const dog = {
-                name: document.querySelector(".name").value,
-                age: document.querySelector(".age").value,
-                legs: document.querySelector(".legs").value,
-                fur: document.querySelector(".fur").value,
-                muzzle: document.querySelector(".muzzle").value
-            }
+            // const dog = {
+            //     name: document.querySelector(".name").value,
+            //     age: document.querySelector(".age").value,
+            //     legs: document.querySelector(".legs").value,
+            //     fur: document.querySelector(".fur").value,
+            //     muzzle: document.querySelector(".muzzle").value
+            // }
+            const dog = new Dogs(document.querySelector(".name").value,document.querySelector(".age").value,document.querySelector(".legs").value,document.querySelector(".fur").value,document.querySelector(".muzzle").value)
+            allInputs.forEach(el=>{
+                el.value=''
+            })
             const animalInfo = document.createElement("div")
             animalInfo.style.width="120px"
             animalInfo.style.border="2px solid black"
@@ -223,6 +229,7 @@ animalButtonBird.addEventListener("click",(event)=>{
         label.innerText=`${i}:`
         const input = document.createElement("input")
         input.className=i.toLowerCase()
+        input.className+=" formInput"
         form.append(label,input)
     }
     const submitButton = document.createElement("button")
@@ -236,13 +243,17 @@ animalButtonBird.addEventListener("click",(event)=>{
             }
         })
         if(fullFields>=5){
-            const bird = {
-                name: document.querySelector(".name").value,
-                age: document.querySelector(".age").value,
-                legs: document.querySelector(".legs").value,
-                wings: document.querySelector(".wings").value,
-                beak: document.querySelector(".beak").value
-            }
+            // const bird = {
+            //     name: document.querySelector(".name").value,
+            //     age: document.querySelector(".age").value,
+            //     legs: document.querySelector(".legs").value,
+            //     wings: document.querySelector(".wings").value,
+            //     beak: document.querySelector(".beak").value
+            // }
+            const bird = new Birds(document.querySelector(".name").value,document.querySelector(".age").value,document.querySelector(".legs").value,document.querySelector(".wings").value,document.querySelector(".beak").value)
+            allInputs.forEach(el=>{
+                el.value=''
+            })
             const animalInfo = document.createElement("div")
             animalInfo.style.width="120px"
             animalInfo.style.border="2px solid black"
