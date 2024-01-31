@@ -40,6 +40,7 @@ const getDirectorId = async (req, res) => {
 // @route PUT /api/directors/:id
 
 const updateOneDirector = async (req, res) => {
+    //Problemo
     const result = await Director.updateOne(
         { _id: req.params.id },
         {
