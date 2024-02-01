@@ -40,20 +40,21 @@ const getDirectorId = async (req, res) => {
 // @route PUT /api/directors/:id
 
 const updateOneDirector = async (req, res) => {
-    //Problemo
-    const result = await Director.updateOne(
-        { _id: req.params.id },
-        {
-            $set: {
-                age: req.body.age,
-            },
-        }
-    )
-    if (!result) {
+    const directorFromDB = await Director.findById(req.params.id)
+    if (!directorFromDB) {
         res.status(404).send("Not found")
     }
+    directorFromDB.age=req.body.age
+    directorFromDB.save()
+    res.status(200).json(directorFromDB)
+}
 
-    res.status(200).json(result)
+// Delete one director by id
+// @route DELETE /api/directors/:id
+
+const deleteDirector = async (req,res)=>{
+    const directorFromDB = await Director.deleteOne({_id:req.params.id})
+    res.status(200).send("Director deleted")
 }
 
 module.exports = {
@@ -61,4 +62,5 @@ module.exports = {
     getDirectors,
     getDirectorId,
     updateOneDirector,
+    deleteDirector
 }
